@@ -119,6 +119,7 @@ public class DemoUIScript : MonoBehaviour {
         Debug.Log("Dismiss: " + result);
     }
 
+        //-------------DEFAULT MESSAGEBOXES---------------
     public void BoxOK()
     {
         MessageBox.ShowOK("Hello MessageBox", "this is a demo message box.\n.\n.\n.\n.\nIt can have multiple lines.", MessageBox.Type.ERROR, CallbackOK);
@@ -137,6 +138,27 @@ public class DemoUIScript : MonoBehaviour {
     public void BoxYesNoCancel()
     {
         MessageBox.ShowYesNoCancel("Hello MessageBox", "this is a demo message box.\n.\n.\n.\n.\nIt can have multiple lines.", MessageBox.Type.ERROR, CallbackOK);
+    }
+
+        //--------CUSTOM MESSAGEBOXES----------
+    public void BoxOKCustom()
+    {
+        MessageBox.ShowOK("Hello MessageBox", "this is a demo message box.\n.\n.\n.\n.\nIt can have multiple lines.", MessageBox.Type.ERROR, CallbackOK, "Custom OK");
+    }
+
+    public void BoxOKCancelCustom()
+    {
+        MessageBox.ShowOKCancel("Hello MessageBox", "this is a demo message box.\nIt can have multiple lines, but this one has just two.", MessageBox.Type.ERROR, CallbackOK, "Okay", "No please!");
+    }
+
+    public void BoxYesNoCustom()
+    {
+        MessageBox.ShowYesNo("Hello MessageBox", "this is a demo message box.\n.\n.\n.\n.\nIt can have multiple lines.", MessageBox.Type.ERROR, CallbackOK, "Definitely!", "Yuck :/");
+    }
+
+    public void BoxYesNoCancelCustom()
+    {
+        MessageBox.ShowYesNoCancel("Hello MessageBox", "this is a demo message box.\n.\n.\n.\n.\nIt can have multiple lines.\nWant a burrito?", MessageBox.Type.ERROR, CallbackOK, "Definitely!", "Yuck :/", "Go away!!!!");
     }
 
     private void CallbackOK(MessageBox.Result obj)
