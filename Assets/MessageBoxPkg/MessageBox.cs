@@ -75,7 +75,7 @@ public class MessageBox {
             return;
         }
         messageBoxCanvas = (GameObject)UnityEngine.Object.Instantiate(prefab);
-        GameObject.Find("Button2").GetComponentInChildren<Text>().text = okText;    //settext for the button
+        GameObject.Find("Button1").GetComponentInChildren<Text>().text = okText;    //settext for the button
         GameObject.Find("Button2").SetActive(false);
         GameObject.Find("Button3").SetActive(false);
         GameObject.Find("MBTitle").GetComponent<Text>().text = title;

@@ -122,46 +122,46 @@ public class DemoUIScript : MonoBehaviour {
         //-------------DEFAULT MESSAGEBOXES---------------
     public void BoxOK()
     {
-        MessageBox.ShowOK("Hello MessageBox", "this is a demo message box.\n.\n.\n.\n.\nIt can have multiple lines.", MessageBox.Type.ERROR, CallbackOK);
+        MessageBox.ShowOK("Hello MessageBox", "this is a demo message box.\n.\n.\n.\n.\nIt can have multiple lines.", MessageBox.Type.ERROR, MessageBoxCallback);
     }
 
     public void BoxOKCancel()
     {
-        MessageBox.ShowOKCancel("Hello MessageBox", "this is a demo message box.\nIt can have multiple lines, but this one has just two.", MessageBox.Type.ERROR, CallbackOK);
+        MessageBox.ShowOKCancel("Hello MessageBox", "this is a demo message box.\nIt can have multiple lines, but this one has just two.", MessageBox.Type.ERROR, MessageBoxCallback);
     }
 
     public void BoxYesNo()
     {
-        MessageBox.ShowYesNo("Hello MessageBox", "this is a demo message box.\n.\n.\n.\n.\nIt can have multiple lines.", MessageBox.Type.ERROR, CallbackOK);
+        MessageBox.ShowYesNo("Hello MessageBox", "this is a demo message box.\n.\n.\n.\n.\nIt can have multiple lines.", MessageBox.Type.ERROR, MessageBoxCallback);
     }
 
     public void BoxYesNoCancel()
     {
-        MessageBox.ShowYesNoCancel("Hello MessageBox", "this is a demo message box.\n.\n.\n.\n.\nIt can have multiple lines.", MessageBox.Type.ERROR, CallbackOK);
+        MessageBox.ShowYesNoCancel("Hello MessageBox", "this is a demo message box.\n.\n.\n.\n.\nIt can have multiple lines.", MessageBox.Type.ERROR, MessageBoxCallback);
     }
 
         //--------CUSTOM MESSAGEBOXES----------
     public void BoxOKCustom()
     {
-        MessageBox.ShowOK("Hello MessageBox", "this is a demo message box.\n.\n.\n.\n.\nIt can have multiple lines.", MessageBox.Type.ERROR, CallbackOK, "Custom OK");
+        MessageBox.ShowOK("Hello MessageBox", "this is a demo message box.\n.\n.\n.\n.\nIt can have multiple lines.", MessageBox.Type.ERROR, MessageBoxCallback, "Custom OK");
     }
 
     public void BoxOKCancelCustom()
     {
-        MessageBox.ShowOKCancel("Hello MessageBox", "this is a demo message box.\nIt can have multiple lines, but this one has just two.", MessageBox.Type.ERROR, CallbackOK, "Okay", "No please!");
+        MessageBox.ShowOKCancel("Hello MessageBox", "this is a demo message box.\nIt can have multiple lines, but this one has just two.", MessageBox.Type.ERROR, MessageBoxCallback, "Okay", "No please!");
     }
 
     public void BoxYesNoCustom()
     {
-        MessageBox.ShowYesNo("Hello MessageBox", "this is a demo message box.\n.\n.\n.\n.\nIt can have multiple lines.", MessageBox.Type.ERROR, CallbackOK, "Definitely!", "Yuck :/");
+        MessageBox.ShowYesNo("Hello MessageBox", "this is a demo message box.\n.\n.\n.\n.\nIt can have multiple lines.", MessageBox.Type.ERROR, MessageBoxCallback, "Definitely!", "Yuck :/");
     }
 
     public void BoxYesNoCancelCustom()
     {
-        MessageBox.ShowYesNoCancel("Hello MessageBox", "this is a demo message box.\n.\n.\n.\n.\nIt can have multiple lines.\nWant a burrito?", MessageBox.Type.ERROR, CallbackOK, "Definitely!", "Yuck :/", "Go away!!!!");
+        MessageBox.ShowYesNoCancel("Hello MessageBox", "this is a demo message box.\n.\n.\n.\n.\nIt can have multiple lines.\nWant a burrito?", MessageBox.Type.ERROR, MessageBoxCallback, "Definitely!", "Yuck :/", "Go away!!!!");
     }
 
-    private void CallbackOK(MessageBox.Result obj)
+    private void MessageBoxCallback(MessageBox.Result obj)
     {
         switch(obj)
         {
