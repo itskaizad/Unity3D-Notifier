@@ -40,7 +40,7 @@ public class MessageBox {
         if (isActive)
             return;
 
-        var prefab = Resources.Load("MessageBoxPrefab");
+        var prefab = Resources.Load("ScalingMessageBox");
         if (prefab == null)
         {
             Debug.LogAssertion("Prefab missing!");
@@ -68,7 +68,7 @@ public class MessageBox {
         if (isActive)
             return;
 
-        var prefab = Resources.Load("MessageBoxPrefab");
+        var prefab = Resources.Load("ScalingMessageBox");
         if (prefab == null)
         {
             Debug.LogAssertion("Prefab missing!");
@@ -98,7 +98,7 @@ public class MessageBox {
         if (isActive)
             return;
 
-        var prefab = Resources.Load("MessageBoxPrefab");
+        var prefab = Resources.Load("ScalingMessageBox");
         if (prefab == null)
         {
             Debug.LogAssertion("Prefab missing!");
@@ -128,7 +128,7 @@ public class MessageBox {
         if (isActive)
             return;
 
-        var prefab = Resources.Load("MessageBoxPrefab");
+        var prefab = Resources.Load("ScalingMessageBox");
         if (prefab == null)
         {
             Debug.LogAssertion("Prefab missing!");

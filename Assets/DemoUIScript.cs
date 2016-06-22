@@ -121,14 +121,44 @@ public class DemoUIScript : MonoBehaviour {
 
     public void BoxOK()
     {
-        MessageBox.ShowOKCancel("Hello MessageBox", "this is a demo message box.\n.\n.\n.\n.\nIt can have multiple lines.", MessageBox.Type.ERROR, CallbackOK);
+        MessageBox.ShowOK("Hello MessageBox", "this is a demo message box.\n.\n.\n.\n.\nIt can have multiple lines.", MessageBox.Type.ERROR, CallbackOK);
+    }
+
+    public void BoxOKCancel()
+    {
+        MessageBox.ShowOKCancel("Hello MessageBox", "this is a demo message box.\nIt can have multiple lines, but this one has just two.", MessageBox.Type.ERROR, CallbackOK);
+    }
+
+    public void BoxYesNo()
+    {
+        MessageBox.ShowYesNo("Hello MessageBox", "this is a demo message box.\n.\n.\n.\n.\nIt can have multiple lines.", MessageBox.Type.ERROR, CallbackOK);
+    }
+
+    public void BoxYesNoCancel()
+    {
+        MessageBox.ShowYesNoCancel("Hello MessageBox", "this is a demo message box.\n.\n.\n.\n.\nIt can have multiple lines.", MessageBox.Type.ERROR, CallbackOK);
     }
 
     private void CallbackOK(MessageBox.Result obj)
     {
-        if(obj == MessageBox.Result.OK)
-            Toast.Show(this, "Dismissed with OK pressed.", 2, Toast.Type.MESSAGE);
-        else
-            Toast.Show(this, "Dismissed manually.", 2, Toast.Type.ERROR);
+        switch(obj)
+        {
+            case MessageBox.Result.OK:
+                Toast.Show(this, "Dismissed with OK pressed.", 2, Toast.Type.MESSAGE);
+                break;
+            case MessageBox.Result.CANCEL:
+                Toast.Show(this, "Dismissed with CANCEL pressed.", 2, Toast.Type.WARNING);
+                break;
+            case MessageBox.Result.YES:
+                Toast.Show(this, "Dismissed with YES pressed.", 2, Toast.Type.MESSAGE);
+                break;
+            case MessageBox.Result.NO:
+                Toast.Show(this, "Dismissed with NO pressed.", 2, Toast.Type.WARNING);
+                break;
+            default:
+                Toast.Show(this, "Dismissed manually.", 2, Toast.Type.ERROR);
+                break;
+        }
+        
     }
 }
