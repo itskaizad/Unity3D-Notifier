@@ -2,13 +2,15 @@
 using System.Collections;
 using System;
 
+
 public class DemoUIScript : MonoBehaviour {
 
-	
+    public Sprite heroImage;
+
     // ---------------TOAST METHODS BELOW-------------------
 
 
-        //---------REGULAR TOASTS--------------
+    //---------REGULAR TOASTS--------------
     public void ShowToastWarning()
     {
         Toast.Show(this, "This is a Warning toast.\nHaha blah blah!\nwhoop whoop!\nidk\nidk\nThat was a frkkin tall toast!", 3, Toast.Type.WARNING);
@@ -160,6 +162,50 @@ public class DemoUIScript : MonoBehaviour {
     {
         MessageBox.ShowYesNoCancel("Hello MessageBox", "this is a demo message box.\n.\n.\n.\n.\nIt can have multiple lines.\nWant a burrito?", MessageBox.Type.ERROR, MessageBoxCallback, "Definitely!", "Yuck :/", "Go away!!!!");
     }
+
+        //-------------IMAGE MESSAGEBOXES---------------
+    public void BoxOKImage()
+    {
+        MessageBox.ShowOK("Hello MessageBox", "this is a demo message box.\n.\n.\n.\n.\nIt can have multiple lines.", MessageBox.Type.ERROR, MessageBoxCallback, heroImage);
+    }
+
+    public void BoxOKCancelImage()
+    {
+        MessageBox.ShowOKCancel("Hello MessageBox", "this is a demo message box.\nIt can have multiple lines, but this one has just two.", MessageBox.Type.ERROR, MessageBoxCallback, heroImage);
+    }
+
+    public void BoxYesNoImage()
+    {
+        MessageBox.ShowYesNo("Hello MessageBox", "this is a demo message box.\n.\n.\n.\n.\nIt can have multiple lines.", MessageBox.Type.ERROR, MessageBoxCallback, heroImage);
+    }
+
+    public void BoxYesNoCancelImage()
+    {
+        MessageBox.ShowYesNoCancel("Hello MessageBox", "this is a demo message box.\n.\n.\n.\n.\nIt can have multiple lines.", MessageBox.Type.ERROR, MessageBoxCallback, heroImage);
+    }
+
+
+    //--------CUSTOM IMAGE MESSAGEBOXES----------
+    public void BoxOKCustomImage()
+    {
+        MessageBox.ShowOK("Hello MessageBox", "this is a demo message box.\n.\n.\n.\n.\nIt can have multiple lines.", MessageBox.Type.ERROR, MessageBoxCallback, heroImage, "Custom OK");
+    }
+
+    public void BoxOKCancelCustomImage()
+    {
+        MessageBox.ShowOKCancel("Hello MessageBox", "this is a demo message box.\nIt can have multiple lines, but this one has just two.", MessageBox.Type.ERROR, MessageBoxCallback, heroImage, "Okay", "No please!");
+    }
+
+    public void BoxYesNoCustomImage()
+    {
+        MessageBox.ShowYesNo("Hello MessageBox", "this is a demo message box.\n.\n.\n.\n.\nIt can have multiple lines.", MessageBox.Type.ERROR, MessageBoxCallback, heroImage, "Definitely!", "Yuck :/");
+    }
+
+    public void BoxYesNoCancelCustomImage()
+    {
+        MessageBox.ShowYesNoCancel("Hello MessageBox", "this is a demo message box.\n.\n.\n.\n.\nIt can have multiple lines.\nWant a burrito?", MessageBox.Type.ERROR, MessageBoxCallback, heroImage, "Definitely!", "Yuck :/", "Go away!!!!");
+    }
+
 
     private void MessageBoxCallback(MessageBox.Result obj)
     {
