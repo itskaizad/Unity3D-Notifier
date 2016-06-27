@@ -225,6 +225,7 @@ public class DemoUIScript : MonoBehaviour {
                 break;
             default:
                 Toast.Show(this, "Dismissed manually.", 2, Toast.Type.ERROR);
+                //MessageBox.ShowOK("D'hawwwwwww", "How dare you cancel manually!", MessageBox.Type.ERROR, MessageBoxCallback);
                 break;
         }
         
