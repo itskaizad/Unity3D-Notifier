@@ -383,6 +383,7 @@ public class MessageBox {
     private static void NoClicked()
     {
         isActive = false;
+        messageBoxCanvas.SetActive(false);
         GameObject.Destroy(messageBoxCanvas);
         if(resultCallback!=null)
             resultCallback(Result.NO);
@@ -391,6 +392,7 @@ public class MessageBox {
     private static void YesClicked()
     {
         isActive = false;
+        messageBoxCanvas.SetActive(false);
         GameObject.Destroy(messageBoxCanvas);
         if (resultCallback != null)
             resultCallback(Result.YES);
@@ -399,6 +401,7 @@ public class MessageBox {
     private static void OKClicked()
     {
         isActive = false;
+        messageBoxCanvas.SetActive(false);
         GameObject.Destroy(messageBoxCanvas);
         if (resultCallback != null)
             resultCallback(Result.OK);
@@ -407,6 +410,7 @@ public class MessageBox {
     private static void CancelClicked()
     {
         isActive = false;
+        messageBoxCanvas.SetActive(false);
         GameObject.Destroy(messageBoxCanvas);
         if (resultCallback != null)
             resultCallback(Result.CANCEL);
@@ -421,6 +425,7 @@ public class MessageBox {
         if (isActive)
         {
             isActive = false;
+            messageBoxCanvas.SetActive(false);
             GameObject.Destroy(messageBoxCanvas);
             if (resultCallback != null)
                 resultCallback(Result.DISMISSED);
