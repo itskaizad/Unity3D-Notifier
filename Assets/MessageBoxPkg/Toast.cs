@@ -88,7 +88,7 @@ public class Toast {
                 toastCanvas.GetComponentInChildren<Image>().color = new Color(1f, 0.53125f, 0.03125f);
                 break;
             case Type.MESSAGE:
-                toastCanvas.GetComponentInChildren<Image>().color = new Color(0f, 0f, 0f);
+                toastCanvas.GetComponentInChildren<Image>().color = new Color(0.95f, 0.95f, 0.95f);
                 break;
         }
 
