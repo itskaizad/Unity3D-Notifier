@@ -56,7 +56,7 @@ public class Toast {
     {
         if (isActive)
         {
-            Debug.Log("ENQUEUED ONE SIMPLE");
+            //Debug.Log("ENQUEUED ONE SIMPLE");
             toastQueue.Enqueue(new ToastHolder(caller, message, duration, type, DEFAULT_SIZE, Gravity.BOTTOM));     //Default size and gravity.
             return;
         }
@@ -69,7 +69,7 @@ public class Toast {
         }
 
 
-        Debug.Log("CREATED ONE");
+        //Debug.Log("CREATED ONE");
 
         //Instantiate the toast!
         toastCanvas = (GameObject)UnityEngine.Object.Instantiate(prefab);
@@ -114,7 +114,7 @@ public class Toast {
     {
         if (isActive)
         {
-            Debug.Log("ENQUEUED ONE BIG");
+            //Debug.Log("ENQUEUED ONE BIG");
             toastQueue.Enqueue(new ToastHolder(caller, message, duration, type, size, Gravity.BOTTOM));
             return;
         }
@@ -126,7 +126,7 @@ public class Toast {
             //Text txt = obj.GetComponent<Text>();
             //txt.fontSize = size;
             toastCanvas.GetComponentInChildren<Text>().fontSize = size;
-            Debug.Log("SETTING THE SIZE to " + size);
+            //Debug.Log("SETTING THE SIZE to " + size);
 
         }
     }
@@ -136,7 +136,7 @@ public class Toast {
     {
         if (isActive)
         {
-            Debug.Log("ENQUEUED ONE, GRAVITY DEFAULT");
+            //Debug.Log("ENQUEUED ONE, GRAVITY DEFAULT");
             toastQueue.Enqueue(new ToastHolder(caller, message, duration, type, DEFAULT_SIZE, gravity));
             return;
         }
@@ -163,7 +163,7 @@ public class Toast {
     {
         if (isActive)
         {
-            Debug.Log("ENQUEUED ONE GRAVITY DEFAULT");
+            //Debug.Log("ENQUEUED ONE GRAVITY DEFAULT");
             toastQueue.Enqueue(new ToastHolder(caller, message, duration, type, size, gravity));
             return;
         }
@@ -173,7 +173,7 @@ public class Toast {
             Show(caller, message, duration, type);
 
             toastCanvas.GetComponentInChildren<Text>().fontSize = size;
-            Debug.Log("SETTING THE SIZE to " + DEFAULT_SIZE);
+            //Debug.Log("SETTING THE SIZE to " + DEFAULT_SIZE);
 
             string animString = getGravityString(gravity);
             AnimationClip anim = Resources.Load<AnimationClip>(animString);
@@ -190,7 +190,7 @@ public class Toast {
     {
         yield return new WaitForSeconds(durationSecs);
         GameObject.Destroy(toastCanvas);
-        Debug.Log("DELETED ONE");
+        //Debug.Log("DELETED ONE");
         isActive = false;
         if (toastQueue.Count>0)
         {
